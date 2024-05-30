@@ -47,16 +47,22 @@ class DeliveryModel extends Model
      */
     public function vehicle()
     {
-        return $this->belongsTo(VehicleModel::class, 'vehicle_id');
+        return $this->hasOne(VehicleModel::class);
     }
 
     /**
      * Define una relación de pertenencia con el modelo RoleModel.
      *
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function role()
+    public function roles()
     {
         return $this->belongsToMany(RoleModel::class, 'roles_deliveries', 'role_id', 'delivery_id');
     }
+    public function order()
+    {
+        return $this->hasOne(OrderModel::class);
+    }
+
 }

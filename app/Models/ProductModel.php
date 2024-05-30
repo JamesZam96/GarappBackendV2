@@ -31,9 +31,9 @@ class ProductModel extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function warehouse()
+    public function companies()
     {
-        return $this->belongsTo(WarehouseModel::class, 'warehouse_id');
+        return $this->belongsToMany(CompanyModel::class);
     }
 
     /**

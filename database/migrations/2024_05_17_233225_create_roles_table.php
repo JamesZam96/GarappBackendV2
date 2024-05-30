@@ -45,17 +45,17 @@ return new class extends Migration
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade')->onUpdate('cascade');
         });
 
-        Schema::create('roles_workshops', function (Blueprint $table) {
+        Schema::create('roles_companies', function (Blueprint $table) {
            $table->id();
            $table->unsignedBigInteger('role_id');
-           $table->unsignedBigInteger('workshops_id');
+           $table->unsignedBigInteger('company_id');
            $table->timestamps();
            
            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('workshops_id')->references('id')->on('workshops')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade')->onUpdate('cascade');
         });
 
-        Schema::create('roles_warehouses', function (Blueprint $table) {
+        /*Schema::create('roles_warehouses', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('warehouses_id');
             $table->unsignedBigInteger('role_id');
@@ -63,7 +63,7 @@ return new class extends Migration
             
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade')->onUpdate('cascade');            
             $table->foreign('warehouses_id')->references('id')->on('warehouses')->onDelete('cascade')->onUpdate('cascade');
-        });
+        });*/
 
         Schema::create('roles_deliveries', function (Blueprint $table) {
             $table->id();
@@ -96,10 +96,9 @@ return new class extends Migration
         Schema::dropIfExists('permissions');
         Schema::dropIfExists('roles_permissions');
         Schema::dropIfExists('roles_users');
-        Schema::dropIfExists('roles_workshops');
-        Schema::dropIfExists('roles_warehouses');
+        Schema::dropIfExists('roles_companies');
         Schema::dropIfExists('roles_deliveries');
-        Schema::dropIfExists('roles_customers');
+        Schema::dropIfExists('roles_users');
         
     }
 };

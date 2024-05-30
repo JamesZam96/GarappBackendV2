@@ -12,7 +12,7 @@ use Laravel\Jetstream\Rules\Role;
  * Este modelo representa la tabla 'companies' en la base de datos.
  * Define las relaciones con otros modelos y usa el trait HasFactory.
  */
-class WarehouseModel extends Model
+class CompanyModel extends Model
 {
     use HasFactory;
 
@@ -37,7 +37,12 @@ class WarehouseModel extends Model
      */
     public function products()
     {
-        return $this->hasMany(ProductModel::class, 'warehouse_id');
+        return $this->belongsToMany(ProductModel::class);
+
+    }
+    public function services()
+    {
+        return $this->belongsToMany(ServiceModel::class);
     }
 
     /**
@@ -49,4 +54,7 @@ class WarehouseModel extends Model
     {
         return $this->belongsToMany(RoleModel::class, 'roles_warehouses', 'role_id', 'warehouse_id');
     }
+    public function orders(){
+    return $this->hasMany(OrderModel::class);
+}
 }

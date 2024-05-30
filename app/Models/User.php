@@ -63,5 +63,9 @@ class User extends Authenticatable
         }
         return false;
     }
-    
+
+    public function orders()
+    {
+    return $this->hasMany(OrderModel::class/* 'order_id', 'user_id'*/);
+    }
 }

@@ -35,6 +35,10 @@ class ServiceModel extends Model
     {
         return $this->belongsToMany(OrderModel::class, 'order_service', 'service_id', 'order_id');
     }
+    public function categories()
+    {
+        return $this->belongsToMany(CategoryModel::class, 'category_service', 'service_id', 'category_id');
+    }
 
     /**
      * Relación muchos a muchos con el modelo WorkshopsModel.
@@ -43,8 +47,8 @@ class ServiceModel extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function workshops()
+    public function companies()
     {
-        return $this->belongsToMany(WorkshopsModel::class, 'workshops_id');
+        return $this->belongsToMany(CompanyModel::class);
     }
 }

@@ -31,9 +31,9 @@ class OrderModel extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function customer()
+    public function user()
     {
-        return $this->belongsTo(CustomerModel::class, 'customer_id');
+        return $this->belongsTo(User::class);
     }
 
     /**
@@ -70,5 +70,13 @@ class OrderModel extends Model
     public function bills()
     {
         return $this->hasMany(BillModel::class, 'order_id');
+    }
+    public function company()
+    {
+        return $this->belongsTo(CompanyModel::class);
+    }
+    public function delivery()
+    {
+        return $this->belongsTo(DeliveryModel::class);
     }
 }

@@ -78,10 +78,11 @@ class RoleModel extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function warehouses()
+    public function companies()
     {
-        return $this->belongsToMany(WarehouseModel::class, 'roles_warehouses', 'role_id', 'warehouse_id');
+        return $this->belongsToMany(CompanyModel::class, 'roles_companies', 'role_id', 'company_id');
     }
+        
 
     /**
      * Define una relación de muchos a muchos con el modelo WorkshopsModel.
@@ -89,8 +90,8 @@ class RoleModel extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function workshops()
+    /*public function workshops()
     {
         return $this->belongsToMany(WorkshopsModel::class, 'roles_workshops', 'role_id', 'workshop_id');
-    }
+    }*/
 }

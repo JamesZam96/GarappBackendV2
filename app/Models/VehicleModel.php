@@ -33,6 +33,6 @@ class VehicleModel extends Model
      */
     public function delivery()
     {
-        return $this->belongsTo(DeliveryModel::class, 'delivery_id');
+        return $this->belongsTo(DeliveryModel::class);
     }
 }
