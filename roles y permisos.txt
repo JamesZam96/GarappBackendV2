@@ -1,0 +1,90 @@
+Roles
+1.administrador = [
+ control total
+ borrar , editar , actualizar , ver , crear
+]
+2.cliente = [
+    solo se limita a  el
+
+    orden   = [
+     borrar , editar , actualizar , ver , crear
+    ]
+
+    perfil = [
+         borrar , editar , actualizar , ver , crear
+    ]
+
+    ver = [
+
+        productos , categorias , servicios ,taller , almacenes
+    ]
+]
+3.almacen = [
+   solo se limita a el 
+productos = [
+     borrar , editar , actualizar , ver , crear
+]
+ orden   = [
+     borrar , editar , actualizar , ver , crear
+    ]
+
+    perfil = [
+         borrar , editar , actualizar , ver , crear
+    ]
+
+   categorias = [
+     borrar , editar , actualizar , ver , crear
+   ]
+   repartidor = [
+     ver y asignar
+   ]
+]
+4.taller = [
+ solo se limita a el
+
+ servicios = [
+     borrar , editar , actualizar , ver , crear
+]
+ orden   = [
+     borrar , editar , actualizar , ver , crear
+    ]
+
+    perfil = [
+         borrar , editar , actualizar , ver , crear
+    ]
+
+   categorias = [
+     borrar , editar , actualizar , ver , crear
+   ]
+   mecanicos = [
+      borrar , editar , actualizar , ver , crear
+   ]
+]
+5.repartidor = [
+
+ solo se limita a el
+ ordenes = [
+    verlas
+    acepta
+    cancela
+ ]
+
+ vehiculos = [
+ borrar , actualizar , ver , crear
+ ]
+ perfila = [
+    borrar , actualizar , ver , crear
+  ]
+ 
+]
+
+6.visitante = [  
+ ver = [
+    almacenes = [
+        productos y categorias
+    ]
+     taller = [
+        servicios y categorias
+     ]
+ ]
+]
